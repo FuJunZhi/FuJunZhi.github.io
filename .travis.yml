@@ -1,18 +1,35 @@
 language: node_js
+node_js: stable
+
+# S: Build Lifecycle
+install:
+#  - npm install -g hexo
+#  - npm install -g hexo-deploy-git
+  - npm install
+
+
+before_script:
+ # - npm install -g gulp
+#   - npm install -g hexo
+   - hexo -v
+
+script:
+  - hexo g
+
+after_script:
+  - cd ./public
+  - git init
+  - git config user.name "FuJunZhi"
+  - git config user.email "fujunzhi1007@163.com"
+  - git add .
+  - git commit -m "Update blog!"
+  - git push --force --quiet "https://${GITHUB_TOKEN}@${GH_REF}" master:master  #GITHUB_TOKEN为在TravisCI中添加的来自Github的授权Token，见上一步
+
 branches:
   only:
-  - master #源码分支名称
-before_install:
-- npm install -g hexo
-- npm install -g hexo-cli
-before_script:
-- git config --global user.name 'FuJunZhi'
-- git config --global user.email 'fujunzhi1007@163.com'
-- sed -i'' "s~git@github.com:<FuJunZhi>/<FuJunZhi.github.io>.git~https://${REPO_TOKEN}:x-oauth-basic@github.com/<FuJunZhi>/<FuJunZhi.github.io>.git~" _config.yml
-install:
-- npm install
-script:
-- hexo clean
-- hexo generate
-after_success:
-- hexo deploy
+    - hexo
+
+# 创建全局变量，与GithubPage仓库ssh地址一致
+env:
+ global:
+   - GH_REF: git@github.com:FuJunZhi/FuJunZhi.github.io.git
