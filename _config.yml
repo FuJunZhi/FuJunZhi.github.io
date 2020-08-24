@@ -119,7 +119,9 @@ theme: next
 ## Docs: https://hexo.io/docs/one-command-deployment
 deploy:
   type: git
-  repo: https://github_token@github.com/FuJunZhi/FuJunZhi.github.io.git
+#  repo: https://github_token@github.com/FuJunZhi/FuJunZhi.github.io.git
+#  repository: https://github.com/FuJunZhi/FuJunZhi.github.io.git
+  repository: https://github_token@github.com/FuJunZhi/FuJunZhi.github.io.git
   branch: master
   
 # 自动生成sitemap
