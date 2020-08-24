@@ -1,37 +1,87 @@
-language: node_js
+#language: node_js
+#node_js: stable
+#
+## S: Build Lifecycle
+#install:
+##  - npm install -g hexo
+##  - npm install -g hexo-deploy-git
+#  - npm install
+#
+#
+#before_script:
+# # - npm install -g gulp
+##   - npm install -g hexo
+#   - hexo -v
+#
+#script:
+#  - hexo clean
+#  - hexo g
+#
+#after_success:
+#  - cd ./public
+#  - git init
+#  - git config user.name "FuJunZhi"
+#  - git config user.email "fujunzhi1007@163.com"
+#  - git add .
+#  - git commit -m "Update blog!"
+#  - git push --force --quiet "https://${3e4415b72d55127f03805604674e9c78a11f69c6}@${GH_REF}" master:master  #GITHUB_TOKEN为在TravisCI中添加的来自Github的授权Token，见上一步
+#  - hexo deploy
+#
+#branches:
+#  only:
+#    - hexo
+#
+## 创建全局变量，与GithubPage仓库ssh地址一致
+#env:
+# global:
+#   - GH_REF: git@github.com:FuJunZhi/FuJunZhi.github.io.git
+
+
+# 指定构建环境是Node.js，当前版本是稳定版
+anguage: node_js
 node_js: stable
 
-# S: Build Lifecycle
-install:
-#  - npm install -g hexo
-#  - npm install -g hexo-deploy-git
-  - npm install
+env:
+ global:
+   - GH_REF: git@github.com:FuJunZhi/FuJunZhi.github.io.git
 
-
-before_script:
- # - npm install -g gulp
-#   - npm install -g hexo
-   - hexo -v
-
-script:
-  - hexo clean
-  - hexo g
-
-after_success:
-  - cd ./public
-  - git init
-  - git config user.name "FuJunZhi"
-  - git config user.email "fujunzhi1007@163.com"
-  - git add .
-  - git commit -m "Update blog!"
-  - git push --force --quiet "https://${3e4415b72d55127f03805604674e9c78a11f69c6}@${GH_REF}" master:master  #GITHUB_TOKEN为在TravisCI中添加的来自Github的授权Token，见上一步
-  - hexo deploy
-
+# 设置钩子只检测blog-source分支的push变动
 branches:
   only:
     - hexo
 
-# 创建全局变量，与GithubPage仓库ssh地址一致
-env:
- global:
-   - GH_REF: git@github.com:FuJunZhi/FuJunZhi.github.io.git
+# 设置缓存文件
+cache:
+  directories:
+    - node_modules
+
+#在构建之前安装hexo环境
+before_install:
+  - npm install -g hexo-cli
+
+#安装git插件和搜索功能插件
+install:
+  - npm install
+
+  # 设置git提交名，邮箱；替换真实token到_config.yml文件
+before_script:
+  - git config user.name "FuJunZhi"
+  - git config user.email "fujunzhi1007@163.com"
+  # 替换同目录下的_config.yml文件中github_token字符串为travis后台刚才配置的变量，注>意此处sed命令用了双引号。单引号无效！
+  - sed -i "s/github_token/${GH_TOKEN}/g" _config.yml || exit 1
+
+# 执行清缓存，生成网页操作
+script:
+  - hexo clean
+  - hexo generate
+  - echo ${ENV_TEST}
+  - hexo deploy
+
+# configure notifications (email, IRC, campfire etc)
+# please update this section to your needs!
+# https://docs.travis-ci.com/user/notifications/
+notifications:
+  email:
+    - fujunzhi1007@163.com
+  on_success: change
+  on_failure: always
