@@ -117,23 +117,13 @@
             </span>
           {%- endif %}
 
-          {%- if not is_index and theme.busuanzi_count.enable and theme.busuanzi_count.post_views %}
-            <span class="post-meta-item" title="{{ __('post.views') }}" id="busuanzi_container_page_pv" style="display: none;">
-              <span class="post-meta-item-icon">
-                <i class="{{ theme.busuanzi_count.post_views_icon }}"></i>
-              </span>
-              <span class="post-meta-item-text">{{ __('post.views') + __('symbol.colon') }}</span>
-              <span id="busuanzi_value_page_pv"></span>
-            </span>
-          {%- endif %}
-
           {{- next_inject('postMeta') }}
 
           {%- if config.symbols_count_time.symbols %}
           {%- if theme.symbols_count_time.separated_meta %}<br>{%- endif %}
             <span class="post-meta-item" title="{{ __('symbols_count_time.count') }}">
               <span class="post-meta-item-icon">
-                <i class="far fa-file-word"></i>
+                <i class="fa fa-file-word"></i>
               </span>
               {%- if theme.symbols_count_time.item_text_post %}
                 <span class="post-meta-item-text">{{ __('symbols_count_time.count') + __('symbol.colon') }}</span>
@@ -153,6 +143,56 @@
               <span>{{ symbolsTime(post, config.symbols_count_time.awl, config.symbols_count_time.wpm, __('symbols_count_time.time_minutes')) }}</span>
             </span>
           {%- endif %}
+
+          {% if theme.post_wordcount.wordcount or theme.post_wordcount.min2read or theme.busuanzi_count.enable %}
+            <div class="post-wordcount">
+              {% if theme.post_wordcount.wordcount %}
+                {% if not theme.post_wordcount.separated_meta %}
+                  <span class="post-meta-divider">|</span>
+                {% endif %}
+                <span class="post-meta-item-icon">
+                  <i class="fa fa-file-word-o"></i>
+                </span>
+                {% if theme.post_wordcount.item_text %}
+                  <span class="post-meta-item-text">{{ __('symbols_count_time.count') }}&#58;</span>
+                {% endif %}
+                <span title="{{ __('symbols_count_time.count') }}">
+                  {{ wordcount(post.content) }}
+                </span>
+              {% endif %}
+
+              {% if theme.post_wordcount.wordcount and theme.post_wordcount.min2read %}
+                <span class="post-meta-divider">|</span>
+              {% endif %}
+
+              {% if theme.post_wordcount.min2read %}
+                <span class="post-meta-item-icon">
+                  <i class="fa fa-clock-o"></i>
+                </span>
+                {% if theme.post_wordcount.item_text %}
+                  <span class="post-meta-item-text">{{ __('symbols_count_time.time')}} &asymp;</span>
+                {% endif %}
+                <span title="{{ __('symbols_count_time.time') }}">
+                  {{ min2read(post.content) + __('symbols_count_time.time_minutes')}}
+                </span>
+              {% endif %}
+
+              {%- if not is_index and theme.busuanzi_count.enable and theme.busuanzi_count.page_pv %}
+               <span class="post-meta-divider">|</span>
+               <span class="post-meta-item">
+                 <span class="post-meta-item-icon">
+                  <i class="fa fa-file-o"></i>
+                 </span>
+                 <span class="post-meta-item-text">{{ __('post.views') }}
+                 </span>
+                 <span class="page-pv">{{ theme.busuanzi_count.page_pv_header }}
+                 <span class="busuanzi-value" id="busuanzi_value_page_pv" ></span>{{ theme.busuanzi_count.page_pv_footer }}
+                 </span>
+              </span>
+             {%- endif %}
+            </div>
+          {% endif %}
+
 
           {%- if post.description and (not theme.excerpt_description or not is_index) %}
             <div class="post-description">{{ post.description }}</div>

@@ -1,5 +1,5 @@
 ---
-title: tags
-date: 2020-08-20 00:26:51
-type: tags
+title: All tags
+date: 2014-12-22 12:39:04
+type: "tags"
 ---

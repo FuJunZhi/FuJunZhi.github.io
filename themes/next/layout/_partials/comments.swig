@@ -1,4 +1,15 @@
 {%- if page.comments %}
+  
+ {%- if theme.gitment.enable %}
+  <div class="comments" id="comments">
+      {% if theme.gitment.lazy %}
+        <div onclick="showGitment()" id="gitment-display-button">{{ __('gitmentbutton') }}</div>
+        <div id="gitment-container" style="display:none"></div>
+      {% else %}
+        <div id="gitment-container"></div>
+      {% endif %}
+    </div>
+{%- endif %} 
   {%- if theme.injects.comment.length == 1 %}
     {%- set inject_item = theme.injects.comment[0] %}
     {{ partial(inject_item.layout, inject_item.locals, inject_item.options) }}
@@ -41,6 +52,7 @@
           }
         })();
       </script>
+      {%- endif %}
     {%- elif theme.comments.style == 'tabs' %}
       <div class="tabs tabs-comment">
         <ul class="nav-tabs">
@@ -57,7 +69,6 @@
         </div>
       </div>
     {%- endif %}
-  {%- endif %}
 {%- endif %}
 
 <script>

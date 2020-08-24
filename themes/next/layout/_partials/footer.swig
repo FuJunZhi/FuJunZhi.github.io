@@ -1,3 +1,4 @@
+
 {%- if theme.footer.beian.enable %}
   <div class="beian">
     {{- next_url('http://www.beian.miit.gov.cn', theme.footer.beian.icp + ' ') }}
@@ -40,17 +41,20 @@
     {%- endif %}
     <span title="{{ __('symbols_count_time.time_total') }}">{{ symbolsTimeTotal(site, config.symbols_count_time.awl, config.symbols_count_time.wpm, __('symbols_count_time.time_minutes')) }}</span>
   {%- endif %}
-</div>
 
-{%- if theme.footer.powered %}
-  <div class="powered-by">
-    {%- set next_site = 'https://theme-next.org' %}
-    {%- if theme.scheme !== 'Gemini' %}
-      {%- set next_site = 'https://' + theme.scheme | lower + '.theme-next.org' %}
-    {%- endif %}
-    {{- __('footer.powered', next_url('https://hexo.io', 'Hexo', {class: 'theme-link'}) + ' & ' + next_url(next_site, 'NexT.' + theme.scheme, {class: 'theme-link'})) }}
-  </div>
-{%- endif %}
+  {% if theme.post_wordcount.totalcount %}
+    <span class="post-meta-divider">|</span>
+    <span class="post-meta-item-icon">
+      <i class="fa fa-area-chart"></i>
+    </span>
+    {% if theme.post_wordcount.item_text %}
+      <span class="post-meta-item-text">{{ __('symbols_count_time.count_total') }}&#58;</span>
+    {% endif %}
+    <span title="{{ __('symbols_count_time.count_total') }}">{#
+    #}{{ totalcount(site, '0,0.0a') }}{#
+  #}</span>
+  {% endif %}
+</div>
 
 {%- if theme.add_this_id %}
   <div class="addthis_inline_share_toolbox">
@@ -59,3 +63,6 @@
 {%- endif %}
 
 {{- next_inject('footer') }}
+
+
+
