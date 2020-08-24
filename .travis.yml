@@ -16,18 +16,16 @@ before_script:
 script:
   - hexo clean
   - hexo g
-  
-after_success:
-  - hexo deploy
 
-after_script:
+after_success:
   - cd ./public
   - git init
   - git config user.name "FuJunZhi"
   - git config user.email "fujunzhi1007@163.com"
   - git add .
   - git commit -m "Update blog!"
-  - git push --force --quiet "https://${GITHUB_TOKEN}@${GH_REF}" master:master  #GITHUB_TOKEN为在TravisCI中添加的来自Github的授权Token，见上一步
+  - git push --force --quiet "https://${3e4415b72d55127f03805604674e9c78a11f69c6}@${GH_REF}" master:master  #GITHUB_TOKEN为在TravisCI中添加的来自Github的授权Token，见上一步
+  - hexo deploy
 
 branches:
   only:
