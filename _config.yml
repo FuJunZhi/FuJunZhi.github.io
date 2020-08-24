@@ -120,7 +120,7 @@ theme: next
 ## Docs: https://hexo.io/docs/one-command-deployment
 deploy:
   type: git
-  repo: https://github_token@github.com/FuJunZhi/FuJunZhi.github.io.git
+  repo: https://62785bfe657dc5e47737041c561ba5463b51ee33@github.com/FuJunZhi/FuJunZhi.github.io.git
 #  repository: https://github.com/FuJunZhi/FuJunZhi.github.io.git
   branch: master
   
