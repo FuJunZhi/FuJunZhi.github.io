@@ -16,6 +16,9 @@ before_script:
 script:
   - hexo clean
   - hexo g
+  
+after_success:
+  - hexo deploy
 
 after_script:
   - cd ./public
@@ -25,9 +28,6 @@ after_script:
   - git add .
   - git commit -m "Update blog!"
   - git push --force --quiet "https://${GITHUB_TOKEN}@${GH_REF}" master:master  #GITHUB_TOKEN为在TravisCI中添加的来自Github的授权Token，见上一步
-  
-after_success:
-  - hexo deploy
 
 branches:
   only:
