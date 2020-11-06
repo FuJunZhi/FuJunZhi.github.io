@@ -68,7 +68,7 @@
 <h3 id="主题设定"><a href="#主题设定" class="headerlink" title="主题设定"></a>主题设定</h3><ul>
 <li><p>打开<code>Bolg</code>下站点配置文件<code>_config.yml</code>，修改名称、描述、作者、语言等主要配置项；  <img src="https://cdn.jsdelivr.net/gh/FuJunZhi/BlogResources@main/2020/images/20201105133820.png" style="zoom:43%;" /></p>
 </li>
-<li><p>打开<code>Bolg/themes/next</code>下主题配置文件<code>_config.yml</code>，修改 Scheme、菜单、侧边栏、头像等配置项；可参考[NEXT主题官方  <img src="https://cdn.jsdelivr.net/gh/FuJunZhi/BlogResources@main/2020/images/20201105135353.png" style="zoom:60%;" /></p>
+<li><p>打开<code>Bolg/themes/next</code>下主题配置文件<code>_config.yml</code>，修改 Scheme、菜单、侧边栏、头像等配置项；<a href="http://theme-next.iissnan.com/getting-started.html">Next主题官网</a><img src="https://cdn.jsdelivr.net/gh/FuJunZhi/BlogResources@main/2020/images/20201105135353.png" style="zoom:60%;" /></p>
 </li>
 </ul>
 <h2 id="部署到GitHub"><a href="#部署到GitHub" class="headerlink" title="部署到GitHub"></a>部署到GitHub</h2><h3 id="创建项目"><a href="#创建项目" class="headerlink" title="创建项目"></a>创建项目</h3><ul>
