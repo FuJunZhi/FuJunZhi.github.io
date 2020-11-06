@@ -167,7 +167,7 @@
 </li>
 <li><p>同一篇文章需要<a href="https://github.com/imsun/gitment/issues/68">初始化comment两次的问题</a>，解决方法就是<code>gitment.swig</code>里id弄成<code>window.location.pathname</code>而不是<code>document.location.href</code>。</p>
 </li>
-<li><p>其他问题，[参见作者项目的Issue</p>
+<li><p>其他问题， <a href="https://github.com/imsun/gitment/issues">参见作者项目的Issue </a></p>
 </li>
 <li><p>object ProgressEvent</p>
 <p>出现这个问题是由于作者在<code>gitment.browser.js</code>中硬编码了自己的服务器人证域名:<code>https://gh-oauth.imsun.net</code>，现在域名过期了,要么自己搭一个认证服务器，要么可以用其他人的，在gitment的issues里面找到了答案:<a href="https://github.com/imsun/gitment/issues/175">#175</a>,需要把Hexo你所用的主题中的引用文件给改一下，我用的是next主题,改动方法如下:</p>
@@ -193,17 +193,17 @@
 
 </li>
 </ul>
-<h3 id="一键初始化评论"><a href="#一键初始化评论" class="headerlink" title="一键初始化评论"></a>一键初始化评论</h3><p>  配置正确的文章，第一次显示，提示还没有初始化</p>
-<p>  文章作者需要登陆GitHub授权后，会显示初始化按钮(注意，不要多点按钮，否则issues出现多条一样的)：</p>
-<p>  <a href="https://draveness.me/git-comments-initialize/">自动初始化 Gitalk 和 Gitment 评论</a></p>
+<h3 id="一键初始化评论"><a href="#一键初始化评论" class="headerlink" title="一键初始化评论"></a>一键初始化评论</h3><ul>
+<li><p>配置正确的文章，第一次显示，提示还没有初始化；文章作者需要登陆GitHub授权后，会显示初始化按钮，如下图：<img src="https://cdn.jsdelivr.net/gh/FuJunZhi/BlogResources@main/2020/images/20201106161344.png" style="zoom:50%;" /></p>
+</li>
+<li><p>点击初始化按钮后注意，不要多点按钮，否则issues出现多条一样的)，如果正常就会出现下图所示：<img src="https://cdn.jsdelivr.net/gh/FuJunZhi/BlogResources@main/2020/images/20201106161548.png"></p>
+</li>
+<li><p><strong>可以通过<a href="https://draveness.me/git-comments-initialize/">自动初始化 Gitalk 和 Gitment 评论</a>实现<a href="https://github.com/imsun/gitment/issues/5">所有文章一键初始化</a></strong>  </p>
+</li>
+</ul>
 ]]></content>
       <tags>
         <tag>hexo</tag>
       </tags>
-  </entry>
-  <entry>
-    <title>ceshi</title>
-    <url>/post/dbb513eb.html</url>
-    <content><![CDATA[]]></content>
   </entry>
 </search>
