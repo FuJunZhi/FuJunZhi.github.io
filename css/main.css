@@ -1247,7 +1247,7 @@ pre .javascript .function {
 }
 .links-of-author a::before,
 .links-of-author span.exturl::before {
-  background: #f2ffff;
+  background: #52251b;
   border-radius: 50%;
   content: ' ';
   display: inline-block;
@@ -2351,19 +2351,6 @@ ul.breadcrumb li + li:last-child {
   color: #ccc;
   margin: auto;
 }
-#gitment-display-button {
-  display: inline-block;
-  padding: 0 15px;
-  color: #0a9caf;
-  cursor: pointer;
-  font-size: 14px;
-  border: 1px solid #0a9caf;
-  border-radius: 4px;
-}
-#gitment-display-button:hover {
-  color: #fff;
-  background: #0a9caf;
-}
 .site-uv,
 .site-pv,
 .page-pv {
@@ -2380,6 +2367,19 @@ ul.breadcrumb li + li:last-child {
 .site-uv::after {
   content: "|";
   padding-left: 10px;
+}
+#gitment-display-button {
+  display: inline-block;
+  padding: 0 15px;
+  color: #0a9caf;
+  cursor: pointer;
+  font-size: 14px;
+  border: 1px solid #0a9caf;
+  border-radius: 4px;
+}
+#gitment-display-button:hover {
+  color: #fff;
+  background: #0a9caf;
 }
 .header {
   margin: 0 auto;
