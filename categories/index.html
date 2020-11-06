@@ -167,7 +167,7 @@
   </li>
         <li class="menu-item menu-item-tags">
 
-    <a href="/tags/" rel="section"><i class="fa fa-tags fa-fw"></i>标签<span class="badge">1</span></a>
+    <a href="/tags/" rel="section"><i class="fa fa-tags fa-fw"></i>标签<span class="badge">0</span></a>
 
   </li>
         <li class="menu-item menu-item-categories">
@@ -275,8 +275,7 @@
           
   <div class="comments" id="comments">
       
-         <div onclick="ShowGitment()" id="gitment-display-button">显示 Gitment 评论</div>
-         <div id="gitment-container" style="display:none"></div>
+         <div id="gitment-container"></div>
        
     </div>
 
@@ -344,12 +343,6 @@
           <span class="site-state-item-name">日志</span>
         </a>
       </div>
-      <div class="site-state-item site-state-tags">
-            <a href="/tags/">
-          
-        <span class="site-state-item-count">1</span>
-        <span class="site-state-item-name">标签</span></a>
-      </div>
   </nav>
 </div>
   <div class="links-of-author motion-element">
@@ -400,7 +393,7 @@
     
       <span class="post-meta-item-text">站点总字数&#58;</span>
     
-    <span title="站点总字数">1.9k</span>
+    <span title="站点总字数">2.4k</span>
   
 </div>
 
@@ -482,23 +475,19 @@
    
    
    
-   <link rel="stylesheet" href="https://imsun.github.io/gitment/style/default.css">
-   <script src="https://imsun.github.io/gitment/dist/gitment.browser.js"></script>
+   <link rel="stylesheet" href="https://cdn.jsdelivr.net/gh/theme-next/theme-next-gitment@1/default.css">
+   <script src="https://cdn.jsdelivr.net/gh/theme-next/theme-next-gitment@1/gitment.browser.js"></script>
    
        <script type="text/javascript">
-           function ShowGitment(){
-               document.getElementById("gitment-display-button").style.display = "none";
-               document.getElementById("gitment-container").style.display = "block";
-               var gitment = new Gitment({
-                   id: document.location.href, 
-                   owner: 'FuJunZhi',
-                   repo: 'BlogGitment',
-                   oauth: {
-                       client_id: '3a89782ff4b366d3149f',
-                       client_secret: 'adad3327badd7a8640a7dddc5e266b4c01d3fd58',
-                   }});
-               gitment.render('gitment-container');
-           }
+           var gitment = new Gitment({
+               id: window.location.pathname, 
+               owner: '22271529',
+               repo: 'FuJunZhi.github.io',
+               oauth: {
+                   client_id: '3a89782ff4b366d3149f',
+                   client_secret: 'adad3327badd7a8640a7dddc5e266b4c01d3fd58',
+               }});
+           gitment.render('gitment-container');
        </script>
    
 
