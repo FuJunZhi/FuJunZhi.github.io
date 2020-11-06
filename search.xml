@@ -165,8 +165,6 @@
 </li>
 <li><p>Error: Not Found问题，repo库填写问题，<a href="https://link.jianshu.com/?t=https://github.com/imsun/gitment/issues/18">详见gitment issues 18</a>；</p>
 </li>
-<li><p>gitment可能不支持链接地址里有中文，所以安装gitment前把<a href="https://muyunyun.cn/posts/f55182c5/#more">链接持久化</a>搞成全是英文的。</p>
-</li>
 <li><p>同一篇文章需要<a href="https://github.com/imsun/gitment/issues/68">初始化comment两次的问题</a>，解决方法就是<code>gitment.swig</code>里id弄成<code>window.location.pathname</code>而不是<code>document.location.href</code>。</p>
 </li>
 <li><p>其他问题，[参见作者项目的Issue</p>
@@ -182,9 +180,30 @@
 <h3 id="字数统计、阅读速度"><a href="#字数统计、阅读速度" class="headerlink" title="字数统计、阅读速度"></a>字数统计、阅读速度</h3><p><a href="https://github.com/willin/hexo-wordcount">hexo-wordcount</a></p>
 <h3 id="本地搜索"><a href="#本地搜索" class="headerlink" title="本地搜索"></a>本地搜索</h3><p><a href="https://github.com/theme-next/hexo-generator-searchdb">hexo-generator-searchdb</a></p>
 <h3 id="Hexo博客收录百度和谷歌"><a href="#Hexo博客收录百度和谷歌" class="headerlink" title="Hexo博客收录百度和谷歌"></a>Hexo博客收录百度和谷歌</h3><p><a href="https://www.jianshu.com/p/8c0707ce5da4">Hexo博客收录百度和谷歌</a></p>
+<h3 id="博客快速压缩"><a href="#博客快速压缩" class="headerlink" title="博客快速压缩"></a>博客快速压缩</h3><p><a href="https://github.com/chenzhutian/hexo-all-minifier">博客压缩插件</a>集成了对 html、css、js、image 的优化，安装上此模块后，只要在根目录下的_config.yml文件中加上如下字段就可对博客所有内容进行压缩。</p>
+<figure class="highlight shell"><table><tr><td class="code"><pre><span class="line">html_minifier:</span><br><span class="line">  enable: true</span><br><span class="line">  ignore_error: false</span><br><span class="line">  exclude:</span><br><span class="line">  </span><br><span class="line">css_minifier:</span><br><span class="line">  enable: true</span><br><span class="line">  exclude:</span><br><span class="line">    - &#x27;*.min.css&#x27;</span><br><span class="line">    </span><br><span class="line">js_minifier:</span><br><span class="line">  enable: true</span><br><span class="line">  mangle: true</span><br><span class="line">  output:</span><br><span class="line">  compress:</span><br><span class="line">  exclude:</span><br><span class="line">    - &#x27;*.min.js&#x27;</span><br><span class="line">    </span><br><span class="line">image_minifier:</span><br><span class="line">  enable: true</span><br><span class="line">  interlaced: false</span><br><span class="line">  multipass: false</span><br><span class="line">  optimizationLevel: 2</span><br><span class="line">  pngquant: false</span><br><span class="line">  progressive: false</span><br></pre></td></tr></table></figure>
+
+<h3 id="文章链接唯一持久化"><a href="#文章链接唯一持久化" class="headerlink" title="文章链接唯一持久化"></a>文章链接唯一持久化</h3><p>由于博客需要更改文章题目或者变更文章发布时间，在默认设置下，文章链接都会改变，不利于搜索引擎收录，也不利于分享。唯一永久链接才是更好的选择。</p>
+<ul>
+<li><p>首先打开终端 <code>cd</code> 到本地的 <code>Bolg</code> 目录下，输入以下命令安装插件。</p>
+<figure class="highlight shell"><table><tr><td class="code"><pre><span class="line">npm install hexo-abbrlink --save</span><br></pre></td></tr></table></figure>
+</li>
+<li><p>打开<code>Bolg</code> 根目录下的 <code>_config.yml</code> 文件，加入以下配置：</p>
+<figure class="highlight shell"><table><tr><td class="code"><pre><span class="line">permalink: post/:abbrlink.html</span><br><span class="line"><span class="meta">#</span><span class="bash">permalink: posts/:abbrlink/</span></span><br><span class="line">abbrlink:</span><br><span class="line">  alg: crc32  # 算法：crc16(default) and crc32</span><br><span class="line">  rep: hex    # 进制：dec(default) and hex</span><br></pre></td></tr></table></figure>
+
+</li>
+</ul>
+<h3 id="一键初始化评论"><a href="#一键初始化评论" class="headerlink" title="一键初始化评论"></a>一键初始化评论</h3><p>  配置正确的文章，第一次显示，提示还没有初始化</p>
+<p>  文章作者需要登陆GitHub授权后，会显示初始化按钮(注意，不要多点按钮，否则issues出现多条一样的)：</p>
+<p>  <a href="https://draveness.me/git-comments-initialize/">自动初始化 Gitalk 和 Gitment 评论</a></p>
 ]]></content>
       <tags>
         <tag>hexo</tag>
       </tags>
+  </entry>
+  <entry>
+    <title>ceshi</title>
+    <url>/post/dbb513eb.html</url>
+    <content><![CDATA[]]></content>
   </entry>
 </search>
