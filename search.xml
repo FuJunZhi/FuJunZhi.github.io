@@ -1,14 +1,9 @@
 <?xml version="1.0" encoding="utf-8"?>
 <search>
   <entry>
-    <title></title>
-    <url>/post/0.html</url>
-    <content><![CDATA[<p>layout: post</p>
-<p>title: “HEXO搭建个人博客”</p>
-<p>date:  2020-8-19 10:01</p>
-<p>description: “HEXO配置，HEXO+Github，搭建个人博客”</p>
-<p>tags: hexo</p>
-<h2 id="背景"><a href="#背景" class="headerlink" title="背景"></a>背景</h2><p>教会别人是最好的学习方式，俗话说“好记性不如烂笔头”，做笔记可以提升自己的写作、总结能力，所以养成写博客的好习惯对自己是很有意的。写博客除了可以用市面上CSDN、博客园、简书、掘金等平台，也可以搭建一套自己的博客，本文着重讲一下使用hexo搭建博客。</p>
+    <title>HEXO搭建个人博客</title>
+    <url>/posts/0/</url>
+    <content><![CDATA[<h2 id="背景"><a href="#背景" class="headerlink" title="背景"></a>背景</h2><p>教会别人是最好的学习方式，俗话说“好记性不如烂笔头”，做笔记可以提升自己的写作、总结能力，所以养成写博客的好习惯对自己是很有意的。写博客除了可以用市面上CSDN、博客园、简书、掘金等平台，也可以搭建一套自己的博客，本文着重讲一下使用hexo搭建博客。</p>
 <p>目前较多人采用的博客搭建方案各有优缺点，有如下几种：</p>
 <ul>
 <li>Git+Github+Markdown+jekyll （免费）</li>
@@ -188,5 +183,8 @@
 <h3 id="本地搜索"><a href="#本地搜索" class="headerlink" title="本地搜索"></a>本地搜索</h3><p><a href="https://github.com/theme-next/hexo-generator-searchdb">hexo-generator-searchdb</a></p>
 <h3 id="Hexo博客收录百度和谷歌"><a href="#Hexo博客收录百度和谷歌" class="headerlink" title="Hexo博客收录百度和谷歌"></a>Hexo博客收录百度和谷歌</h3><p><a href="https://www.jianshu.com/p/8c0707ce5da4">Hexo博客收录百度和谷歌</a></p>
 ]]></content>
+      <tags>
+        <tag>hexo</tag>
+      </tags>
   </entry>
 </search>
