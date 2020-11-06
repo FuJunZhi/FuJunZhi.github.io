@@ -2,7 +2,7 @@
 <search>
   <entry>
     <title>HEXO搭建个人博客</title>
-    <url>/posts/0/</url>
+    <url>/post/0.html</url>
     <content><![CDATA[<h2 id="背景"><a href="#背景" class="headerlink" title="背景"></a>背景</h2><p>教会别人是最好的学习方式，俗话说“好记性不如烂笔头”，做笔记可以提升自己的写作、总结能力，所以养成写博客的好习惯对自己是很有意的。写博客除了可以用市面上CSDN、博客园、简书、掘金等平台，也可以搭建一套自己的博客，本文着重讲一下使用hexo搭建博客。</p>
 <p>目前较多人采用的博客搭建方案各有优缺点，有如下几种：</p>
 <ul>
